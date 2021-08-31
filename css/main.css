@@ -55,7 +55,7 @@ header {
 }
 
 header h1, nav {
-	flex: 1 1 300px;
+	flex: 1 1 375px;
 }
 header h1 {
 	margin: 0;
@@ -101,16 +101,18 @@ header nav ul li a{
 .top-section,
 .bottom-section {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	flex-flow: row wrap; 
-	
 }
 
-.main-image {
-	height: auto;
-	
+.top-section {
+ flex-flow: row wrap;
 }
+
+.bottom-section {
+	flex-direction: column;
+}
+
 .main-image img {
 	width: 100%;
 	border-top: 3px solid #77a466;
@@ -135,17 +137,12 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 100%;
 	border-top: 1px solid #eee;
 	flex: 1 1 375px;
+	max-height: 35vh;
+	width: 100%;
 }
 
-
-
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
 
 .section-two h3,
 .section-three h3,.section-one h3  {
@@ -178,7 +175,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	width: 100%;
 }
 footer span {
 	font-family: 'Galada', cursive;
@@ -186,3 +183,45 @@ footer span {
 	color: #77a466;
 	font-size: 0.875em;
 }
+
+@media all and (min-width:768px) {
+/* Tablet styles here */
+.bottom-section {
+	flex-direction: row;
+	align-items: flex-start;
+	}
+	.section-one,
+	.section-two,
+	.section-three {
+     width: 33%;
+	 max-height: 100%;
+	}
+	.section-two {
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+	}
+}
+	
+@media all and (min-width:840px) {
+/* Desktop styles here */
+header{
+	flex-flow:row nowrap;
+	justify-content: space-between;
+}
+header h1 {
+	text-align: left;
+}
+header nav ul {
+flex-direction: row;
+justify-content: space-between;
+}
+
+header nav ul li {
+	padding: 0;
+}
+
+header nav{
+	border-top:none;
+}
+}
+
